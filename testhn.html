@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tower of Hanoi – Team Work</title>
+
+<!-- =================================================
+ 👤 VŨ
+ GIAO DIỆN + HIỂN THỊ
+ - Thiết kế HTML
+ - CSS trang trí
+ - Vẽ đĩa dựa trên towers
+================================================== -->
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+    }
+
+    .tower {
+        display: inline-block;
+        width: 200px;
+        height: 250px;
+        border: 2px solid #333;
+        margin: 10px;
+        vertical-align: bottom;
+    }
+
+    .disk {
+        height: 20px;
+        margin: 2px auto;
+        background-color: steelblue;
+        color: white;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Tháp Hà Nội</h2>
+
+<button id="nextBtn">Next Move</button>
+
+<!-- VŨ: vùng hiển thị -->
+<div id="towers"></div>
+
+<script>
+/* =================================================
+ 📦 DỮ LIỆU CHUNG (KHÔNG AI SỞ HỮU RIÊNG)
+ - Trường, Tuấn, Vũ đều dùng
+================================================== */
+let towers = [
+    [], // A
+    [], // B
+    []  // C
+];
+
+let moves = [];        // danh sách bước [from, to]
+let currentMove = 0;  // chỉ số bước hiện tại
+
+/* =================================================
+ 👤 TRƯỜNG
+ PHẦN 1: THUẬT TOÁN THÁP HÀ NỘI
+ (ĐỆ QUY – CHỈ SINH moves)
+================================================== */
+function hanoi(n, from, to, aux) {
+    // TRƯỜNG LÀM:
+    // 1. Nếu n == 1:
+    //    - lưu bước [from, to] vào moves
+    //    - return
+    //
+    // 2. Nếu n > 1:
+    //    - gọi hanoi(n-1, from, aux, to)
+    //    - lưu bước [from, to]
+    //    - gọi hanoi(n-1, aux, to, from)
+}
+
+function generateSolution(n) {
+    // TRƯỜNG LÀM:
+    // 1. reset mảng moves
+    // 2. reset currentMove về 0
+    // 3. gọi hanoi(n, 0, 2, 1)
+}
+
+/* =================================================
+ 👤 TUẤN
+ PHẦN 2: STACK + MÔ PHỎNG DỮ LIỆU
+ (DI CHUYỂN ĐĨA THEO moves)
+================================================== */
+function initTowers(n) {
+    // TUẤN LÀM:
+    // 1. làm rỗng towers[0], towers[1], towers[2]
+    // 2. đưa n đĩa vào towers[0]
+    //    - đĩa lớn ở dưới, nhỏ ở trên
+}
+
+function nextMove() {
+    // TUẤN LÀM:
+    // 1. nếu currentMove >= moves.length → dừng
+    // 2. lấy [from, to] = moves[currentMove]
+    // 3. pop đĩa từ towers[from]
+    // 4. push đĩa sang towers[to]
+    // 5. currentMove++
+    // 6. gọi draw()
+}
+
+/* =================================================
+ 👤 VŨ
+ PHẦN 3: HIỂN THỊ + TƯƠNG TÁC
+ (CHỈ ĐỌC towers, KHÔNG SỬA)
+================================================== */
+function draw() {
+    // VŨ LÀM:
+    // 1. clear nội dung #towers
+    // 2. với mỗi tower:
+    //    - tạo div.tower
+    //    - duyệt các đĩa từ dưới lên
+    //    - tạo div.disk với width theo kích thước đĩa
+    // 3. gắn vào DOM
+}
+
+/* =================================================
+ 👤 VŨ
+ GẮN THAO TÁC
+ - Khi người dùng bấm nút "Next Move"
+ - Thì gọi hàm nextMove()
+================================================== */
+document.getElementById("nextBtn")
+    .addEventListener("click", nextMove);
+
+/* =================================================
+ 👤 TRƯỜNG + TUẤN + VŨ
+ KHỞI ĐỘNG CHƯƠNG TRÌNH
+================================================== */
+// CẢ NHÓM THỐNG NHẤT LÀM:
+// 1. initTowers(số_đĩa)
+// 2. generateSolution(số_đĩa)
+// 3. draw()
+
+</script>
+</body>
+</html>
